@@ -1,0 +1,30 @@
+{
+    "name": "alainvd/caslib-laravel",
+    "description": "Caslib Wrapper for Laravel",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Alainvd\\Caslib\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alain Van Driessche",
+            "email": "alainvd@gmail.com"
+        }
+    ],
+    "require": {
+        "ecphp/cas-lib": "^1.1",
+        "nyholm/psr7": "^1.5",
+        "symfony/http-client": "^6.0",
+        "symfony/cache": "^6.0",
+        "nyholm/psr7-server": "^1.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Alainvd\\Caslib\\CaslibServiceProvider"
+            ]
+        }
+    }
+}

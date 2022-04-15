@@ -1,0 +1,69 @@
+{
+    "name": "ecphp/cas-lib",
+    "description": "CAS Lib, a standard library for CAS authentication.",
+    "license": "BSD-3-Clause",
+    "type": "library",
+    "keywords": [
+        "authentication",
+        "cas",
+        "psr",
+        "single-sign-on"
+    ],
+    "require": {
+        "php": ">= 7.4",
+        "ext-dom": "*",
+        "ext-json": "*",
+        "ext-libxml": "*",
+        "ext-simplexml": "*",
+        "league/uri-components": "^2",
+        "openlss/lib-array2xml": "^1.0",
+        "psr/cache": "^1.0.1 || ^2 || ^3",
+        "psr/http-client": "^1.0",
+        "psr/http-client-implementation": "^1",
+        "psr/http-factory": "^1.0.1",
+        "psr/http-factory-implementation": "^1",
+        "psr/http-message": "^1.0",
+        "psr/http-message-implementation": "^1",
+        "psr/log": "^1.1 || ^2 || ^3"
+    },
+    "require-dev": {
+        "ecphp/php-conventions": "^1",
+        "friends-of-phpspec/phpspec-code-coverage": "^6.0.0",
+        "infection/infection": "^0.23 || ^0.24",
+        "infection/phpspec-adapter": "^0.1.2",
+        "monolog/monolog": "^1.0",
+        "nyholm/psr7": "^1.4",
+        "nyholm/psr7-server": "^1.0.0",
+        "phpspec/phpspec": "^7",
+        "phpstan/phpstan-strict-rules": "^0.12",
+        "symfony/cache": "^5.2",
+        "symfony/http-client": "^5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "EcPhp\\CasLib\\": "./src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "spec\\EcPhp\\CasLib\\": "./spec/EcPhp/CasLib/",
+            "tests\\EcPhp\\CasLib\\": "./tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true,
+            "ergebnis/composer-normalize": true,
+            "infection/extension-installer": true,
+            "phpro/grumphp": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "scripts": {
+        "changelog-unreleased": "docker-compose run auto_changelog -c .auto-changelog -u",
+        "changelog-version": "docker-compose run auto_changelog -c .auto-changelog -v",
+        "grumphp": "./vendor/bin/grumphp run",
+        "phpinsights": "./vendor/bin/phpinsights analyse src/",
+        "phpspec": "./vendor/bin/phpspec run"
+    }
+}
